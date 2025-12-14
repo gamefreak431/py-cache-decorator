@@ -3,7 +3,7 @@ from typing import Callable
 
 def cache(func: Callable) -> Callable:
     cache_storage = {}
-    def wrapper(*args, **kwargs):
+    def wrapper(*args: int, **kwargs: int) -> int:
         if args in cache_storage:
             result = cache_storage[args]
             print("Getting from cache")
